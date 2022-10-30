@@ -3,8 +3,6 @@ import numpy as np
 import numba as nb
 import depthai as dai
 
-####Program to capture color images from OAK-D Lite
-
 streams = []
 # Enable one or both streams
 streams.append('isp')
