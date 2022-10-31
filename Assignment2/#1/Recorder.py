@@ -4,15 +4,13 @@ import numba as nb
 import depthai as dai
 
 streams = []
-# Enable one or both streams
 streams.append('isp')
 
 @nb.njit(nb.uint16[::1] (nb.uint8[::1], nb.uint16[::1], nb.boolean), parallel=True, cache=True)
 def unpack_raw10(input, out, expand16bit):
     lShift = 6 if expand16bit else 0
 
-    for i in np.arange(input.size // 5): # around 25ms per frame (with numba)
-        #for i in nb.prange(input.size // 5): # around  5ms per frame
+    for i in np.arange(input.size // 5):
         b4 = input[i * 5 + 4]
         out[i * 4]     = ((input[i * 5]     << 2) | ( b4       & 0x3)) << lShift
         out[i * 4 + 1] = ((input[i * 5 + 1] << 2) | ((b4 >> 2) & 0x3)) << lShift
@@ -43,23 +41,22 @@ for s in streams:
     cv2.resizeWindow(s, (960, 540))
 
 capture_flag = False
-img_counter = 0
+image_counter = 0
 while True:
     for q in q_list:
         name = q.getName()
         data = q.get()
         width, height = data.getWidth(), data.getHeight()
         payload = data.getData()
-        capture_file_info_str = f"Amani_capture_{name}_{img_counter}"
+        capture_file_info_name = f"Amani_capture_{name}_{image_counter}"
         if name == 'isp':
             shape = (height * 3 // 2, width)
             yuv420p = payload.reshape(shape).astype(np.uint8)
             bgr = cv2.cvtColor(yuv420p, cv2.COLOR_YUV2BGR_IYUV)
-            grayscale_img =  cv2.cvtColor(bgr,cv2.COLOR_BGR2GRAY)
+            grayscale_img = cv2.cvtColor(bgr,cv2.COLOR_BGR2GRAY)
         if capture_flag:
-            filename = capture_file_info_str + '.png'
-            print("Saving to file:", filename)
-            grayscale_img = np.ascontiguousarray(grayscale_img)  # just in case
+            filename = capture_file_info_name + '.png'
+            grayscale_img = np.ascontiguousarray(grayscale_img)
             cv2.imwrite(filename, grayscale_img)
         bgr = np.ascontiguousarray(bgr)
         cv2.imshow(name, grayscale_img)
@@ -69,4 +66,4 @@ while True:
         break
     elif key%256 == 32:
         capture_flag = True
-        img_counter += 1
+        image_counter += 1
