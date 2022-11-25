@@ -48,7 +48,7 @@ while True:
         data = q.get()
         width, height = data.getWidth(), data.getHeight()
         payload = data.getData()
-        capture_file_info_name = f"Amani_capture_{name}_{image_counter}"
+        capture_file_info_name = f"frame{image_counter}"
         if name == 'isp':
             shape = (height * 3 // 2, width)
             yuv420p = payload.reshape(shape).astype(np.uint8)
@@ -56,6 +56,7 @@ while True:
             grayscale_img = cv2.cvtColor(bgr,cv2.COLOR_BGR2GRAY)
         if capture_flag:
             filename = capture_file_info_name + '.png'
+            print(filename)
             grayscale_img = np.ascontiguousarray(grayscale_img)
             cv2.imwrite(filename, grayscale_img)
         bgr = np.ascontiguousarray(bgr)
