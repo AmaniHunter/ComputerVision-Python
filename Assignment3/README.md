@@ -23,3 +23,4 @@
 
 6.
 ## Disparity Calculations 
+<img width="557" alt="Screenshot 2022-11-30 at 5 02 17 PM" src="https://user-images.githubusercontent.com/50552494/204917684-88781517-186b-42cd-ae55-34507605d0ed.png">
