@@ -74,12 +74,12 @@ with dai.Device(pipeline) as device:
                 face_names.append(name)
         process_this_frame = not process_this_frame
 
-        cv2.polylines(frame, np.array([top_lip]), 1, (255, 255, 255))
-        cv2.polylines(frame, np.array([bottom_lip]), 1, (255, 255, 255))
+       # cv2.polylines(frame, np.array([top_lip]), 1, (255, 255, 255))
+        #cv2.polylines(frame, np.array([bottom_lip]), 1, (255, 255, 255))
         for i in range(1, len(center_points)):
             if center_points[i - 1] is None or center_points[i] is None:
                 continue
-            cv2.line(frame, tuple(center_points[i - 1]), tuple(center_points[i]), (0, 0, 255), 2)
+           # cv2.line(frame, tuple(center_points[i - 1]), tuple(center_points[i]), (0, 0, 255), 2)
         for (top, right, bottom, left), name in zip(face_locations, face_names):
             top *= 4
             right *= 4
