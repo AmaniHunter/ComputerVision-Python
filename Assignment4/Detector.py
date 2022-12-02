@@ -7,11 +7,10 @@ import imutils
 import time
 import cv2
 import pytesseract
+import webbrowser
+import re
 
-# setting up tesseract path
-#pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
-
+found_user_socials = False
 def box_extractor(scores, geometry, min_confidence):
 
     num_rows, num_cols = scores.shape[2:4]
@@ -92,7 +91,7 @@ if __name__ == '__main__':
 
     fps = FPS().start()
 
-    while True:
+    while not found_user_socials:
 
         frame = vs.read()
         frame = frame[1] if args.get('video', False) else frame
@@ -140,7 +139,15 @@ if __name__ == '__main__':
             # recognizing text
             config = '-l eng --oem 1 --psm 7'
             text = pytesseract.image_to_string(roi, config=config)
-            print('TEXT: ', text)
+            print('Text: ', text)
+            match = re.search("Amani Hunter", text)
+            #print('TEXT: ', text)
+            if match:
+                print("Found match, go to users online profiles")
+                webbrowser.open("https://www.linkedin.com/in/amani-hunter/")
+                webbrowser.open("https://github.com/AmaniHunter")
+                found_user_socials = True
+                #break
             cv2.rectangle(orig, (start_x, start_y), (end_x, end_y), (0, 255, 0), 2)
             cv2.putText(orig, text, (start_x, start_y - 20),
                         cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 255), 3)
