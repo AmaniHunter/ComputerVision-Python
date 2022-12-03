@@ -7,8 +7,8 @@ def motion_constraints(Iref, Inext):
     kernel_x = np.array([[-1., 1.], [-1., 1.]])*.25
     kernel_y = np.array([[-1., -1.], [1., 1.]])*.25
     kernel_t = np.array([[1., 1.], [1., 1.]])*.25
-    Iref = Iref / 255. # normalize pixels
-    Inext = Inext / 255. # normalize pixels
+    Iref = Iref / 255.
+    Inext = Inext / 255.
     mode = 'same'
 
     Ix = signal.convolve2d(Iref, kernel_x, boundary='symm', mode=mode)
