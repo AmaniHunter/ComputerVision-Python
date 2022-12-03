@@ -1,6 +1,6 @@
 # Assignment 3
 
-1.
+# 1.
 ## 10 Second Video Footage
 
 
@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/50552494/205464076-20b00ce3-4b84-47ae-
 
 
 
-2.
+# 2.
 ## Motion Tracking Equation
 # Ix, Iy, It
 [[ 0.00000000e+00 -1.76470588e-02  3.92156863e-02 ... -5.09803922e-02
@@ -50,20 +50,20 @@ https://user-images.githubusercontent.com/50552494/205464076-20b00ce3-4b84-47ae-
  [ 0.04313725  0.0245098  -0.00490196 ... -0.04313725 -0.03529412
   -0.03823529]]
 
-3.
+# 3.
 ## Optical Flow Vectors 
 <img width="811" alt="Screenshot 2022-12-03 at 5 11 01 PM" src="https://user-images.githubusercontent.com/50552494/205464139-d1c84a5f-bafd-49f3-97b3-bb55f55465fc.png">
 
 <img width="1258" alt="Screenshot 2022-12-03 at 5 05 28 PM" src="https://user-images.githubusercontent.com/50552494/205463976-44b96d2b-c055-4b33-8376-e1a45c1e3e70.png">
 
-4.
+# 4.
 ## Feature Based Object Detection
 <img width="442" alt="Screenshot 2022-11-30 at 1 08 37 PM" src="https://user-images.githubusercontent.com/50552494/204875087-cf60e332-e5df-47bf-ae7a-d8750665dae1.png">
 
-5.
+# 5.
 ## Real Time Face Tracking Application
 <img width="855" alt="Screenshot 2022-11-30 at 1 21 34 PM" src="https://user-images.githubusercontent.com/50552494/204877701-3319a7ef-4db6-410a-97f1-ad1eb7543070.png">
 
-6.
+# 6.
 ## Disparity Calculations 
 <img width="557" alt="Screenshot 2022-11-30 at 5 02 17 PM" src="https://user-images.githubusercontent.com/50552494/204917684-88781517-186b-42cd-ae55-34507605d0ed.png">
