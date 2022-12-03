@@ -14,20 +14,13 @@ def computeDisparity(img, markerSize =4, totalMarkers=50, draw=True):
     bboxs, ids, rejected = aruco.detectMarkers(gray, arucoDict, parameters = arucoParam)
     return (bboxs)
 
-img0 = cv2.imread('arucoMarker1.png')
-img1 = cv2.imread('arucoMarker2.png')
+img0 = cv2.imread('frame1.png')
+img1 = cv2.imread('frame2.png')
 
 baseline = 11.5
 focal_length = 1.636331765375964e+03
 bbox1= computeDisparity(img0)
 bbox2 = computeDisparity(img1)
 
-print('box1 ', bbox1)
-#print(bbox1[0][0][3][0])
-#print(bbox2[0][0][3][0])
-
 d = (baseline * focal_length)/(bbox1[0][0][3][0]-bbox2[0][0][3][0])
 print('Disparity', d)
-#plt.imshow(d)
-#plt.axis('off')
-#plt.show()
