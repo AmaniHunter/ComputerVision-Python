@@ -83,11 +83,13 @@ if __name__ == '__main__':
 
     if not args.get('video', False):
         print("[INFO] starting video stream...")
+        print('vid clause')
         vs = VideoStream(src=0).start()
         time.sleep(1)
 
     else:
         vs = cv2.VideoCapture(args['video'])
+        print('else clause')
 
     fps = FPS().start()
 
