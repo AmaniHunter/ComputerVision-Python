@@ -5,6 +5,10 @@
 
 
 
+https://user-images.githubusercontent.com/50552494/205464076-20b00ce3-4b84-47ae-bac9-cbe7a0afc501.mp4
+
+
+
 2.
 ## Motion Tracking Equation
 # Ix, Iy, It
