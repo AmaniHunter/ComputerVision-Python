@@ -5,8 +5,8 @@ import numpy as np
 feature_params = dict(maxCorners = 300, qualityLevel = 0.2, minDistance = 2, blockSize = 7)
 
 lk_params = dict(winSize = (15,15), maxLevel = 2, criteria = (cv.TERM_CRITERIA_EPS | cv.TERM_CRITERIA_COUNT, 10, 0.03))
-
-cap = cv.VideoCapture("")
+#cap = cv.VideoCapture("shibuya.mp4")
+cap = cv.VideoCapture("output.mp4")
 
 color = (0, 255, 0)
 red = (255,0,0)
