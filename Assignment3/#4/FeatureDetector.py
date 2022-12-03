@@ -41,7 +41,7 @@ xoutVideo.setStreamName("feature detector")
 
 camRgb.setBoardSocket(dai.CameraBoardSocket.RGB)
 camRgb.setResolution(dai.ColorCameraProperties.SensorResolution.THE_1080_P)
-camRgb.setVideoSize(860, 720)
+camRgb.setVideoSize(1000, 1000)
 
 xoutVideo.input.setBlocking(False)
 xoutVideo.input.setQueueSize(1)
@@ -131,7 +131,7 @@ with dai.Device(pipeline) as device:
         # Draw center mass
             cv2.circle(frame, centerMass, 7, [100, 0, 255], 2)
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(frame, 'Center', tuple(centerMass), font, 2, (255, 255, 255), 2)
+            cv2.putText(frame, 'Center of Hand', tuple(centerMass), font, 2, (255, 255, 255), 2)
 
         # Distance from each finger defect(finger webbing) to the center mass
             distanceBetweenDefectsToCenter = []
