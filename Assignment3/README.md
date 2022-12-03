@@ -52,6 +52,8 @@ https://user-images.githubusercontent.com/50552494/205464076-20b00ce3-4b84-47ae-
 
 3.
 ## Optical Flow Vectors 
+<img width="811" alt="Screenshot 2022-12-03 at 5 11 01 PM" src="https://user-images.githubusercontent.com/50552494/205464139-d1c84a5f-bafd-49f3-97b3-bb55f55465fc.png">
+
 <img width="1258" alt="Screenshot 2022-12-03 at 5 05 28 PM" src="https://user-images.githubusercontent.com/50552494/205463976-44b96d2b-c055-4b33-8376-e1a45c1e3e70.png">
 
 4.
